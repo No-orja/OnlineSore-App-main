@@ -41,7 +41,7 @@ export default function AddToCartHook(productId, products){
     useEffect(() => {
         if(!loading){
             if(error){
-                notify(error?.message, "error")
+                console.log("ERROR ON TOKEN")
             }else if(response){
                 if(response?.data?.status === "success"){
                     notify(response?.data?.message, "success")
@@ -51,6 +51,7 @@ export default function AddToCartHook(productId, products){
 
     },[loading, error, response])
 
+    
     return [indexColor, colorClick, handelAddCliced]
 
 }

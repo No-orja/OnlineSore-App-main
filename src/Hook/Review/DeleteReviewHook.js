@@ -8,9 +8,9 @@ export default function DeleteReviewHook(review){
     console.log("cerrentUser",cerrentUser)
     console.log("The review",review)
     useEffect(() => {
-        if(cerrentUser._id === review.user._id){
-            setIsUser(true)
-        }  
+        if (cerrentUser && cerrentUser._id === review.user._id) {
+            setIsUser(true);
+        }
     },[])
     const [showDelete, setShowDelete] = useState(false);
     const [isUser, setIsUser] = useState(false);
