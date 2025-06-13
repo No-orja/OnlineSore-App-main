@@ -82,7 +82,7 @@ export default function ProductCard({favProd, item}) {
                 }}>
 
                 <Link to={`/products/${item?._id}`} style={{ textDecoration: "none" }}>
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={imageUrl(item?.imageCover)} />
+                    <Card.Img  style={{ height: "180px", width: "100%", objectFit: "contain" }} src={imageUrl(item?.imageCover)} />
                 </Link>
                     
                 <div className="d-flex justify-content-end mx-2">
@@ -100,7 +100,7 @@ export default function ProductCard({favProd, item}) {
                 </div>
                 <Card.Body>
                     <Card.Title>
-                        <div className="card-title">
+                        <div className="card-title" >
                             {item?.title}
                         </div>
                     </Card.Title>
