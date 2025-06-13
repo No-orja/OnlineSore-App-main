@@ -16,7 +16,7 @@ const useDeleteDataToken = async (url) => {
             Authorization: `Bearer ${localStorage.getItem("token")}`
         }
     }
-    const response = await baseURL.delete(url, config); // ✅ تصحيح الترتيب
+    const response = await baseURL.delete(url, config); 
     return response;
 }
 

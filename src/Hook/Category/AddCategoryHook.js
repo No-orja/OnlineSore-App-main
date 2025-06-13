@@ -67,5 +67,5 @@ export default function AddCategoryHook(){
             }
         }
     },[loading])
-    return [image, name, onImageChange, onNameChange, handelSubmit,isPress , loading ] 
+    return [image, name, onImageChange, onNameChange, handelSubmit, isPress , loading ] 
 }
