@@ -56,44 +56,57 @@ export default function AdminAllProductsCard({product}){
                 </Button>
                 </Modal.Footer>
             </Modal>
-        <Card
-            className="my-2"
+            <Card
+            className="my-2 shadow-sm border-0 rounded-4 custom-card"
             style={{
                 width: "100%",
                 height: "350px",
-                borderRadius: "8px",
-                border: "none",
-                backgroundColor: "#FFFFFF",
-            }}>
-            <Row className="d-flex justify-content-center px-2">
-                <Col className=" d-flex justify-content-between">
-                    <div className="d-inline item-delete-edit" onClick={handleDeleteClicked}>ازاله</div>
-                    <Link to={`/admin/editproduct/${product._id}`} style={{ textDecoration: 'none' }}>
-                        <div className="d-inline item-delete-edit">تعديل</div>
-                    </Link>
-                    
+                backgroundColor: "#fff",
+                transition: "transform 0.2s ease-in-out",
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.transform = "scale(1.02)")}
+            onMouseLeave={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            >
+            <Row className="justify-content-end px-3 pt-2">
+                <Col xs="auto">
+                <div
+                    className="btn btn-sm btn-danger me-2"
+                    style={{ fontSize: "0.85rem" }}
+                    onClick={handleDeleteClicked}
+                >
+                    إزالة
+                </div>
+                <Link to={`/admin/editproduct/${product._id}`}>
+                    <div className="btn btn-sm btn-outline-primary" style={{ fontSize: "0.85rem" }}>
+                    تعديل
+                    </div>
+                </Link>
                 </Col>
             </Row>
-            <Link to={`/products/${product._id}`} style={{ textDecoration: "none" }}>
-                <Card.Img style={{ height: "228px", width: "100%" }} src={product.imageCover} />
-                <Card.Body>
-                    <Card.Title>
-                        <div className="card-title">
-                            {product.title}
-                        </div>
-                    </Card.Title>
-                    <Card.Text>
-                        <div className="d-flex justify-content-between">
-                            <div className="card-rate">{product.ratingsQuantity}</div>
-                            <div className="d-flex">
-                                <div className="card-currency mx-1">₪</div>
-                                <div className="card-price">{product.price}</div>
-                            </div>
-                        </div>
-                    </Card.Text>
+            <Link to={`/products/${product._id}`} style={{ textDecoration: "none", color: "inherit" }}>
+                <Card.Img
+                style={{
+                    height: "180px",
+                    width: "100%",
+                    objectFit: "contain",
+                    padding: "10px",
+                }}
+                src={product.imageCover}
+                />
+                <Card.Body className="text-center px-3">
+                <Card.Title className="fw-semibold fs-6">{product.title}</Card.Title>
+                <Card.Text>
+                    <div className="d-flex justify-content-between align-items-center">
+                    <span className="badge bg-warning text-dark">{product.ratingsQuantity} تقييم</span>
+                    <span className="text-success fw-bold">
+                        ₪ {product.price}
+                    </span>
+                    </div>
+                </Card.Text>
                 </Card.Body>
             </Link>
-        </Card>
+            </Card>
+
     </Col>
     )
 }

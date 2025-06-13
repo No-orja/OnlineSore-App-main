@@ -10,8 +10,8 @@ export default function RegisterHook() {
     const dispatch = useDispatch();
     const navigator = useNavigate();
     
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('admin@gmail.com');
+    const [password, setPassword] = useState('pass123');
 
     //Handel error
     const [formErrors, setFormErrors] = useState({});
